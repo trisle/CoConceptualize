@@ -1,0 +1,40 @@
+CITS4230 Internet Technologies
+STAGE 1 SUBMISSION
+
+---------------------------------------------------
+*	AUTHOR INFO
+---------------------------------------------------
+
+Student Name: 	Tris Cao LE
+Student ID:		20851625
+Email Address:	20851625@student.uwa.edu.au
+
+---------------------------------------------------
+*	DIRECTORY LISTING
+---------------------------------------------------
+
+Dir/						<comment>
+ROOT
+css/			
+	default.css				<stylesheet file>
+images/						<images used>
+js/					
+	default.js				<JavaScript file>
+index.html					<homepage - includes 4 in-site sub-pages>
+signup.html 				<register page>
+login.html 					<login page>
+
+
+---------------------------------------------------
+*	TECHNIQUES
+---------------------------------------------------
+
++ Reponsive web design as an improvement of the old fluid design.
+	-> Currently supports viewing on PC, laptop and tablet.
+	-> Using CSS3 media queries (see default.css)
+	-> Supports all main browsers.
+	
++ jQuery in the default JavaScipt file.
+	-> DOM manipulating
+	-> Form validating
+	-> UI components

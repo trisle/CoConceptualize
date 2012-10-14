@@ -18,7 +18,7 @@ section {
 
 #header {
   position: relative;
-  background: #6188ad url(../images/bgtop.gif) repeat;
+  background: #6188ad url(/images/bgtop.gif) repeat;
   text-align: center;
 }
 
@@ -155,7 +155,7 @@ button#get-started:hover {
 
 #getin {
   position: relative;
-  background: #6188ad url(../images/bgsignup.jpg) repeat;
+  background: #6188ad url(/images/bgsignup.jpg) repeat;
   width: 100%;
   margin: 0 auto;
 }
@@ -302,12 +302,12 @@ button#get-started:hover {
 }
 
 #contact-form #sender_name {
-  background: #fff url(../images/contact-name.png) no-repeat scroll 7px 15px;
+  background: #fff url(/images/contact-name.png) no-repeat scroll 7px 15px;
   padding-left: 35px;
 }
 
 #contact-form #sender_email {
-  background: #fff url(../images/contact-email.png) no-repeat scroll 7px 15px;
+  background: #fff url(/images/contact-email.png) no-repeat scroll 7px 15px;
   padding-left: 35px;
 }
 
@@ -324,7 +324,7 @@ button#get-started:hover {
 }
 
 #contact-form #sender_message {
-  background: #fff url(../images/contact-message.png) no-repeat scroll 400px 70px;
+  background: #fff url(/images/contact-message.png) no-repeat scroll 400px 70px;
 }
 
 button#send-email {
@@ -418,13 +418,15 @@ button#send-email:hover {
   padding: 7px;
   border: 1px solid #da2525;
   display: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #signup-box input {
   width: 400px;
   height: 40px;
   margin-top: 20px;
-  background: #fff url(../images/sign-up-required.png) no-repeat scroll 7px 10px;
+  background: #fff url(/images/sign-up-required.png) no-repeat scroll 7px 10px;
   padding-left: 35px;
   border: 0;
 }
@@ -546,7 +548,7 @@ button#learnmore-button:hover {
   width: 400px;
   height: 60px;
   margin-top: 20px;
-  background: #fff url(../images/sign-up-required.png) no-repeat scroll 7px 20px;
+  background: #fff url(/images/sign-up-required.png) no-repeat scroll 7px 20px;
   padding-left: 35px;
   border: 0;
   font-size: 1.5em;
@@ -622,21 +624,21 @@ button#login-button:hover {
 }
 
 .section-nav .prev {
-  background-image: url(../images/prev.png);
+  background-image: url(/images/prev.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
   cursor: pointer;
 }
 
 .section-nav .next {
-  background: url(../images/next.png);
+  background: url(/images/next.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
   cursor: pointer;
 }
 
 .section-nav .top {
-  background: url(../images/top.png);
+  background: url(/images/top.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
   cursor: pointer;
@@ -778,12 +780,12 @@ button#get-started {
 }
 
 #contact-form #sender_name {
-  background: #fff url(../images/contact-name.png) no-repeat scroll 7px 10px;
+  background: #fff url(/images/contact-name.png) no-repeat scroll 7px 10px;
   padding-left: 35px;
 }
 
 #contact-form #sender_email {
-  background: #fff url(../images/contact-email.png) no-repeat scroll 7px 10px;
+  background: #fff url(/images/contact-email.png) no-repeat scroll 7px 10px;
   padding-left: 35px;
 }
 
@@ -799,7 +801,7 @@ button#get-started {
 }
 
 #contact-form #sender_message {
-  background: #fff url(../images/contact-message-small.png) no-repeat scroll 290px 40px;
+  background: #fff url(/images/contact-message-small.png) no-repeat scroll 290px 40px;
 }
 
 button#send-email {

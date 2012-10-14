@@ -1,4 +1,8 @@
 CoConceptualize::Application.routes.draw do
+
+  match '/users/login', :controller => 'users', :action => 'login'
+  resources :users
+
   get "home/index"
 
   # The priority is based upon order of creation:

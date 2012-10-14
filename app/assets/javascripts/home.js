@@ -7,11 +7,11 @@ $(function() {
     },400);
 
     $("#log-in").click(function(){
-        window.location = 'login.html';
+        window.location = '/users/login';
     });
 
     $("#sign-up").click(function(){
-        window.location = 'signup.html';
+        window.location = '/users/new';
     });
 
     $("#learnmore-button").click(function(){
@@ -56,7 +56,7 @@ $(function() {
     var i = 0;
     $("#copyright-bar").click(function() {
         if (i%2==0) {
-            $("#copyright-bar img").attr("src", "images/copyright-toggle.png");
+            $("#copyright-bar img").attr("src", "/images/copyright-toggle.png");
             $("#copyright-bar").css("-moz-box-shadow", "0px 1px 8px #000");
             $("#copyright-bar").css("-webkit-box-shadow", "0px 1px 8px #000");
             $("#copyright-bar").css("box-shadow", "0px 1px 8px #000");
@@ -71,9 +71,9 @@ $(function() {
             $("#copyright-bar").animate({
                 "width" : "40px"
             },200);
-            $("#copyright-text").html('<img src="images/copyright.png" />');
+            $("#copyright-text").html('<img src="/images/copyright.png" />');
             $("#copyright-text").fadeOut("fast");
-            $("#copyright-bar img").attr("src", "images/copyright.png");
+            $("#copyright-bar img").attr("src", "/images/copyright.png");
             i++;
         }
     });
@@ -90,34 +90,42 @@ $(function() {
         if ($("#username").val() == "" || $("#email").val() == "" || $("#password").val() == "" || $("#password_confirm").val() == "" || $("#fname").val() == "" || $("#lname").val() == "") {
             $("#register_error").html("Empty field detected");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(!isName($("#username").val())){
             $("#register_error").html("Username is invalid");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(!isLong($("#username").val())){
             $("#register_error").html("Username should be at least 5 letters long");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(isNameOccupied($("#username").val())){
             $("#register_error").html("This username has been registered");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(!isEmail($("#email").val())){
             $("#register_error").html("Invalid email address");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(!isPassword($("#password").val())){
             $("#register_error").html("Password is invalid");
             $("#register_error").fadeIn();
+            return false;
         }
         else if(!isLong($("#password").val())){
             $("#register_error").html("Password is not long enough (8-12 characters)");
             $("#register_error").fadeIn();
+            return false;
         }
         else if($("#password_confirm").val() != $("#password").val()){
             $("#register_error").html("Password confirmation is wrong");
             $("#register_error").fadeIn();
+            return false;
         }
         else {
             $("#register_error").html("Processing");
@@ -125,16 +133,17 @@ $(function() {
             $("#register_error").css("color", "#46bb00");
             $("#register_error").css("border", "1px solid #58d110");
             $("#register_error").fadeIn("slow").delay("400").fadeOut();
+            $("#new_user").submit();
         }
     });
 
     $("#fields input").keydown(function(){
         var value = $(this).val();
         if (value != "" || value.length != 0) {
-            $(this).css('background', '#fff url(images/sign-up-required-filled.png) no-repeat scroll 7px 20px');
+            $(this).css('background', '#fff url(/images/sign-up-required-filled.png) no-repeat scroll 7px 10px');
         }
         else {
-            $(this).css('background', '#fff url(images/sign-up-required.png) no-repeat scroll 7px 20px');
+            $(this).css('background', '#fff url(/images/sign-up-required.png) no-repeat scroll 7px 10px');
         }
     });
 

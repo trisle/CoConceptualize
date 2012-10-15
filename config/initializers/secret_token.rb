@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-CoConceptualize::Application.config.secret_token = '3f91d59cc3689e19c5cf548cf93b6ea73b5bf1d0fe29fbc1a243f1c7b8ea921acd300c404d06b16789f35ff02b3508445803423ac249a41f9b82ed96c9593511'
+CoConceptualize::Application.config.secret_token = 'ed4e9a8d59f99ba5fbda701669742f99d5cc76b6ddf58ed367a95aff8bb2e3d8eb9a78f92db5371e74a2d5d66b1845042e6093647740f0aa98b8f06d363ed0ca'

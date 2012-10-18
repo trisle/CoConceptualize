@@ -1,5 +1,7 @@
 CoConceptualize::Application.routes.draw do
 
+  resources :tests
+
   match '/users/login', :controller => 'users', :action => 'login'
   resources :users
 

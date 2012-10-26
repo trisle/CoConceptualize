@@ -1,5 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_user_path(@test) %> |
-<%= link_to 'Back', users_path %>
+<section id="signup">
+  <div id="nav">
+    <div id="logo">
+      <a href="/home/index">CoConceptualize</a>
+    </div>
+    <ul>
+      <li><a href="/home/index">Home</a></li>
+      <li class="sepa">·</li>
+      <li><a href="/home/index#about">About</a></li>
+      <li class="sepa">·</li>
+      <li><a href="/home/index#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div id="signup-success">
+    <p id="notice"><%= notice %></p>
+    <p>Username<b><%= @user.username %></b></p>
+    <p>First Name<b><%= @user.firstname %></b></p>
+    <p>Last Name<b><%= @user.lastname %></b></p>
+    <p>Email Address<b><%= @user.email %></b></p>
+  </div>
+<%= link_to 'Edit', edit_user_path(@user) %>
+</section>
+<div id="copyright-bar">
+  <span id="copyright-text"></span>
+  <img src="/images/copyright.png" />
+</div>

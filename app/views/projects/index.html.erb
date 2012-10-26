@@ -1,0 +1,45 @@
+<section id="login">
+  <div id="nav">
+    <div id="logo">
+      <a href="/home/index">CoConceptualize</a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="sepa">·</li>
+      <li><a href="#about" onClick="smoothScroll('about','fast')">About</a></li>
+      <li class="sepa">·</li>
+      <li><a href="#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+    </ul>
+  </div>
+  <div id="projects-listing">
+    <h1>Hello <%= @user.username %>! Welcome to your projects list</h1>
+    <table id="projects-list">
+       <% if @projects.blank? %>
+        <div class="no-project-found">
+          You currently have no project!
+        </div>
+        <% else %>
+          <tr>
+            <th>Name</th>
+            <th>Date created</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <% @projects.each do |project| %>
+          <tr>
+            <td><%= project.name %></td>
+            <td><%= project.date_created %></td>
+            <td><%= link_to 'Show', project %></td>
+            <td><%= link_to 'Edit', edit_project_path(project) %></td>
+            <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
+</section>
+<div id="copyright-bar">
+  <span id="copyright-text"></span>
+  <img src="images/copyright.png" />
+</div>

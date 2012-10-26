@@ -1,11 +1,17 @@
 CoConceptualize::Application.routes.draw do
 
-  resources :tests
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
-  match '/users/login', :controller => 'users', :action => 'login'
+  resources :projects
   resources :users
 
   get "home/index"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,21 @@
+#projects-listing {
+	margin-top: 70px;
+}
+
+#projects-listing h1 {
+	width: 470px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#projects-listing table {
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 60%;
+}
+
+#projects-listing .no-project-found {
+	margin-top: 30px;
+	color: red;
+}

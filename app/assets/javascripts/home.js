@@ -7,7 +7,7 @@ $(function() {
     },400);
 
     $("#log-in").click(function(){
-        window.location = '/users/login';
+        window.location = '/login';
     });
 
     $("#sign-up").click(function(){
@@ -87,43 +87,38 @@ $(function() {
 
     /*  REGISTER ERROR DISPLAY */
     $("#signup-button").click(function(){
-        if ($("#username").val() == "" || $("#email").val() == "" || $("#password").val() == "" || $("#password_confirm").val() == "" || $("#fname").val() == "" || $("#lname").val() == "") {
+        if ($("#user_username").val() == "" || $("#user_email").val() == "" || $("#user_password").val() == "" || $("#user_firstname").val() == "" || $("#user_lastname").val() == "") {
             $("#register_error").html("Empty field detected");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(!isName($("#username").val())){
+        else if(!isName($("#user_username").val())){
             $("#register_error").html("Username is invalid");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(!isLong($("#username").val())){
+        else if(!isLong($("#user_username").val())){
             $("#register_error").html("Username should be at least 5 letters long");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(isNameOccupied($("#username").val())){
+        else if(isNameOccupied($("#user_username").val())){
             $("#register_error").html("This username has been registered");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(!isEmail($("#email").val())){
+        else if(!isEmail($("#user_email").val())){
             $("#register_error").html("Invalid email address");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(!isPassword($("#password").val())){
+        else if(!isPassword($("#user_password").val())){
             $("#register_error").html("Password is invalid");
             $("#register_error").fadeIn();
             return false;
         }
-        else if(!isLong($("#password").val())){
+        else if(!isLong($("#user_password").val())){
             $("#register_error").html("Password is not long enough (8-12 characters)");
-            $("#register_error").fadeIn();
-            return false;
-        }
-        else if($("#password_confirm").val() != $("#password").val()){
-            $("#register_error").html("Password confirmation is wrong");
             $("#register_error").fadeIn();
             return false;
         }
@@ -133,11 +128,10 @@ $(function() {
             $("#register_error").css("color", "#46bb00");
             $("#register_error").css("border", "1px solid #58d110");
             $("#register_error").fadeIn("slow").delay("400").fadeOut();
-            $("#new_user").submit();
         }
     });
 
-    $("#fields input").keydown(function(){
+    $("#new_user input").keydown(function(){
         var value = $(this).val();
         if (value != "" || value.length != 0) {
             $(this).css('background', '#fff url(/images/sign-up-required-filled.png) no-repeat scroll 7px 10px');

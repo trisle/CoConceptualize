@@ -1,5 +1,7 @@
 CoConceptualize::Application.routes.draw do
 
+    #get "node/test/:id" => "node#test"
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
@@ -10,6 +12,15 @@ CoConceptualize::Application.routes.draw do
   resources :users
 
   get "home/index"
+  
+  
+  match "/node/json/:id" => "node#index"
+  #match "/node/update" => "ideas#update"
+  #resources :ideas
+
+  match "/projects/:id" => "node#test"
+  #match "/projects" =>"projects#index"
+  #resources :users
 
 
 

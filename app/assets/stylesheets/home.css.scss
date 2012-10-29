@@ -42,12 +42,18 @@ section {
   padding-left: 25px;
   padding-right: 25px;
   border-bottom: 6px solid #38c2e4;
+  z-index: 999;
 }
 
 #nav #logo a {
   font-family: 'Oswald', sans-serif;
   color: #fff;
   text-decoration: none;
+}
+
+#nav #logo a:hover {
+  background: none;
+  color: #68daff;
 }
 
 #nav ul {
@@ -423,7 +429,7 @@ button#send-email:hover {
 #signup-box input {
   width: 400px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   background: #fff url(/images/sign-up-required.png) no-repeat scroll 7px 10px;
   padding-left: 35px;
   border: 0;
@@ -504,13 +510,18 @@ button#signup-button:hover {
 }
 
 #login-box {
-  position: absolute;
+  margin: 0 auto;
   width: 421px;
   height: 569px;
-  top: 50%;
-  left: 50%;
-  margin-left: -210px; 
-  margin-top: -285px;
+  margin-top: 70px;
+}
+
+#login-box .title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 4em;
+  color: #d12c2c;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 #login-box input {
@@ -533,6 +544,19 @@ button#signup-button:hover {
   padding: 7px;
   border: 1px solid #da2525;
   display: none;
+}
+
+#login-box .no-account {
+  margin-top: 20px;
+}
+
+#login-box .no-account a {
+  text-decoration: none;
+}
+
+#login-box .no-account a:hover {
+  background: none;
+  color: #11a0db;
 }
 
 button#login-button {
@@ -559,7 +583,7 @@ button#login-button {
   text-shadow: 1.0px 1.0px #000;
   text-transform: uppercase;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 button#login-button:hover {

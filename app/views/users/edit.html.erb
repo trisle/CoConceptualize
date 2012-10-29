@@ -1,6 +1,23 @@
-<h1>Editing user</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<section id="signup">
+	<div id="nav">
+		<div id="logo">
+			<a href="/home/index">CoConceptualize</a>
+		</div>
+		<ul>
+			<li><a href="/home/index">Home</a></li>
+			<li class="sepa">·</li>
+			<li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
+			<li class="sepa">·</li>
+			<li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+		</ul>
+	</div>
+	<div id="signup-box">
+		<div class="title">Sign Up Now</div>
+		<div id="register_error"></div>
+	<%= render 'form' %>
+	</div>
+</section>
+<div id="copyright-bar">
+	<span id="copyright-text"></span>
+	<img src="/images/copyright.png" />
+</div>

@@ -2,7 +2,6 @@
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
       <ul>
       <% @project.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,20 +9,13 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
+    <%= f.text_field :name, :placeholder => 'Name of Project' %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :date_created %><br />
-    <%= f.date_select :date_created %>
+    <%= f.text_field :assignuser, :placeholder => 'Type in a username to assign' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <div><button id="signup-button">Submit</button></div>
   </div>
 <% end %>

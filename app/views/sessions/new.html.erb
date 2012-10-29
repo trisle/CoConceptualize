@@ -4,22 +4,26 @@
 			<a href="/home/index">CoConceptualize</a>
 		</div>
 		<ul>
-			<li><a href="index.html">Home</a></li>
+			<li><a href="/home/index">Home</a></li>
 			<li class="sepa">·</li>
-			<li><a href="#about" onClick="smoothScroll('about','fast')">About</a></li>
+			<li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
 			<li class="sepa">·</li>
-			<li><a href="#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+			<li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
 		</ul>
 	</div>
 	<div id="login-box">
-			<% if flash[:alert] %>
-				<p id="notice"><%= flash[:alert] %></p>
-			<% end %>
-			<%= form_tag do %>
-				<div><%= text_field_tag :username, params[:username], :placeholder => 'Username' %></div>
-				<div><%= password_field_tag :password, params[:password], :placeholder => 'Password' %></div>
-				<div><button id="login-button">Login!</button></div>
-			<% end %>
+		<div class="title">Login Now</div>
+		<% if flash[:alert] %>
+			<p id="notice"><%= flash[:alert] %></p>
+		<% end %>
+		<%= form_tag do %>
+			<div><%= text_field_tag :username, params[:username], :placeholder => 'Username' %></div>
+			<div><%= password_field_tag :password, params[:password], :placeholder => 'Password' %></div>
+			<div><button id="login-button">Login!</button></div>
+		<% end %>
+		<div class="no-account">
+			<%= link_to "Don't have an account yet?", users_path %>
+		</div>
 	</div>
 </section>
 <div id="copyright-bar">

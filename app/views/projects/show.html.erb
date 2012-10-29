@@ -1,20 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Id:</b>
-  <%= @project.id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
-
-<p>
-  <b>Date created:</b>
-  <%= @project.date_created %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<section id="login">
+	<div id="nav">
+	<div id="logo">
+	  <a href="/home/index">CoConceptualize</a>
+	</div>
+	<ul>
+	  <li><a href="/home/index">Home</a></li>
+			<li class="sepa">·</li>
+			<li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
+			<li class="sepa">·</li>
+			<li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+	</ul>
+	</div>
+	<div id="main-canvas" class="cf">
+		<div id="online-users">
+			<h3>Online Users</h3>
+		</div>
+		<div id="canvas">
+			<div class="heading">
+				<div class="back"><%= link_to 'Back', projects_path %></div>
+				<%= @project.name %>
+			</div>
+			<div class="graph">
+				fdfs
+			</div>
+		</div>
+	</div>
+</section>
+<div id="copyright-bar">
+  <span id="copyright-text"></span>
+  <img src="/images/copyright.png" />
+</div>

@@ -63,7 +63,7 @@ $(function() {
             $("#copyright-bar").animate({
                 "width" : "600px"
             },200);
-            $("#copyright-text").html("Copyright &copy; CoConceptualize 2012 Tris Le [<a href='mailto:20851625@student.uwa.edu.au'>20851625@student.uwa.edu.au</a>]");
+            $("#copyright-text").html("&copy; CoConceptualize 2012 Awesome guys: Tris Le, Asher Nevins, Sheldon Liu");
             $("#copyright-text").fadeIn("fast");
             i++;
         }
@@ -87,7 +87,7 @@ $(function() {
 
     /*  REGISTER ERROR DISPLAY */
     $("#signup-button").click(function(){
-        if ($("#user_username").val() == "" || $("#user_email").val() == "" || $("#user_password").val() == "" || $("#user_firstname").val() == "" || $("#user_lastname").val() == "") {
+        if ($("#user_username").val() == "" || $("#user_email").val() == "" || $("#user_password").val() == "" || $("#user_password_confirmation").val() == "" || $("#user_firstname").val() == "" || $("#user_lastname").val() == "") {
             $("#register_error").html("Empty field detected");
             $("#register_error").fadeIn();
             return false;
@@ -104,6 +104,11 @@ $(function() {
         }
         else if(isNameOccupied($("#user_username").val())){
             $("#register_error").html("This username has been registered");
+            $("#register_error").fadeIn();
+            return false;
+        }
+        else if ($("#user_password").val() != $("#user_password_confirmation").val()) {
+            $("#register_error").html("Password and password confirmation mismatch!");
             $("#register_error").fadeIn();
             return false;
         }

@@ -4,35 +4,47 @@
       <a href="/home/index">CoConceptualize</a>
     </div>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="/home/index">Home</a></li>
       <li class="sepa">·</li>
-      <li><a href="#about" onClick="smoothScroll('about','fast')">About</a></li>
+      <li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
       <li class="sepa">·</li>
-      <li><a href="#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+      <li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
     </ul>
   </div>
+  <div id="toolbar">
+    <div id="new-project">
+       <%= link_to 'New Project', new_project_path %>
+    </div>
+    <div id="logout">
+      <%= link_to 'Log Out', logout_path,
+          :method => :delete,
+          :confirm => 'Are you sure you want to logout?',
+          :controller => "sessions" 
+      %>
+    </div>
+  </div>
   <div id="projects-listing">
-    <h1>Hello <%= @user.username %>! Welcome to your projects list</h1>
-    <table id="projects-list">
+    <h1>Hello <span style="color:#17a5d4"><b><%= @user.username %></b></span>, welcome to your projects list!</h1>
+    <table id="projects-list" cellpadding="0" cellspacing="0">
        <% if @projects.blank? %>
         <div class="no-project-found">
           You currently have no project!
         </div>
         <% else %>
           <tr>
-            <th>Name</th>
-            <th>Date created</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th width="40%">Project Name</th>
+            <th width="30%">Created On</th>
+            <th width="30%" colspan="3">Action</th>
           </tr>
           <% @projects.each do |project| %>
           <tr>
-            <td><%= project.name %></td>
-            <td><%= project.date_created %></td>
-            <td><%= link_to 'Show', project %></td>
-            <td><%= link_to 'Edit', edit_project_path(project) %></td>
-            <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to project.name, project %></td>
+            <td><%= project.created_at %></td>
+            <td colspan="3">
+              <%= link_to 'Edit', edit_project_path(project) %>
+              &nbsp;|&nbsp;
+              <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
           </tr>
           <% end %>
         <% end %>
@@ -41,5 +53,5 @@
 </section>
 <div id="copyright-bar">
   <span id="copyright-text"></span>
-  <img src="images/copyright.png" />
+  <img src="/images/copyright.png" />
 </div>

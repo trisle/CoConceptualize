@@ -1,3 +1,44 @@
+#toolbar {
+	position: absolute;
+	right: 40px;
+	top: 60px;
+}
+
+#toolbar a {
+	color: #FFF;
+	padding: 5px;
+	padding-left: 13px;
+	padding-right: 13px;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 1px 1px #000;
+}
+
+#toolbar #new-project {
+	margin-bottom: 20px;
+}
+
+#toolbar #new-project a {
+	background-color: #2bb8d1
+}
+
+#toolbar #logout a {
+	background-color: #e64c4c;
+}
+
+#new-or-edit-project {
+	margin-top: 50px;
+}
+
+#new-or-edit-project input {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  background: #fff url(/images/sign-up-required.png) no-repeat scroll 7px 10px;
+  padding-left: 35px;
+  border: 0;
+}
+
 #projects-listing {
 	margin-top: 70px;
 }
@@ -12,10 +53,88 @@
 #projects-listing table {
 	margin: 0 auto;
 	margin-top: 30px;
-	width: 60%;
+	width: 700px;
+}
+
+#projects-listing table th,td {
+	text-align: left;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#projects-listing table th {
+	height: 30px;
+	background: #222;
+	color: #FFF;
+}
+
+#projects-listing table td {
+	background: #eaeaea;
+	height: 30px;
+	border-bottom: 1px solid #cbcbcb;
+}
+
+#projects-listing table td a {
+	text-decoration: none;
+}
+
+#projects-listing table td a:hover {
+	text-decoration: underline;
+	background: none;
+	color: #000;
 }
 
 #projects-listing .no-project-found {
 	margin-top: 30px;
 	color: red;
+}
+
+#main-canvas {
+	width: 100%;
+	height: 100%;
+}
+
+#main-canvas #online-users {
+	float: right;
+	width: 15%;
+	height: 100%;
+	background-color: #222;
+	color: #FFF;
+}
+
+#main-canvas #canvas {
+	float: left;
+	width: 85%;
+}
+
+#main-canvas #canvas .heading {
+	position: relative;
+	height: 2em;
+	background-color: #ddd;
+	font-size: 2em;
+	text-transform: capitalize;
+	line-height: 2em;
+}
+
+#main-canvas #canvas .heading .back a {
+	background-color: #f89719;
+	color: #FFF;
+	position: absolute;
+	right: 0;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+	text-shadow: 1px 1px #865b22;
+	text-decoration: none;
+}
+
+#main-canvas #canvas .heading .back a:hover {
+	background-color: #4ca8c6;
+	text-shadow: 1px 1px #24657a;
+}
+
+#main-canvas #canvas .heading .back a:before {
+	content: "‹‹ ";
 }

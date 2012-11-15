@@ -1,19 +1,49 @@
+<script src="/assets/demo.js?body=1" type="text/javascript"></script>
+<script src="/assets/websocket.js?body=1" type="text/javascript"></script>
 <section id="login">
 	<div id="nav">
-	<div id="logo">
-	  <a href="/home/index">CoConceptualize</a>
-	</div>
-	<ul>
-	  <li><a href="/home/index">Home</a></li>
-			<li class="sepa">·</li>
-			<li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
-			<li class="sepa">·</li>
-			<li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
-	</ul>
+		<div id="logo">
+		  <a href="/home/index">CoConceptualize</a>
+		</div>
+		<ul>
+		  <li><a href="/home/index">Home</a></li>
+				<li class="sepa">·</li>
+				<li><a href="/home/index#about" onClick="smoothScroll('about','fast')">About</a></li>
+				<li class="sepa">·</li>
+				<li><a href="/home/index#contact" onClick="smoothScroll('contact','fast')">Contact</a></li>
+		</ul>
 	</div>
 	<div id="main-canvas" class="cf">
-		<div id="online-users">
+		<div id="online-user">
 			<h3>Online Users</h3>
+			<ul id="online_users"></ul>
+		</div>
+		<div id="concept-manager">
+			<h3>The Concepts</h3>
+			<form id="update">
+				<div>
+					Current Sub-Concept
+					<input type="text" id="node_title" name="title"  />
+				</div>
+				<div>
+					Detail
+					<input type="text" id="node_detail" name="detail"  />
+				</div>
+				<input type="hidden" id="node_id" name="id" value = "<%= @n_id %>" />
+			</form>
+			<button id="button_update">update</button>
+			<h3>New Sub-Concept</h3>
+			<form id="create">
+				<input type="hidden" id="new_node_pid" name="project_id" value="<%= params[:id]%>" />
+				<input type="hidden" id="new_node_uid" name="user_id" value="<%= @user[:id] %>" />
+				<input type="hidden" id="new_node_uname" name="user_name" value="<%= @user[:username] %>" />
+				<input type="hidden" id="ancestor" name="ancestor"/>
+				Title
+				<input type="text" id="new_node_title" name="title"  />
+				Detail
+				<input type="text" id="new_node_detail" name="detail"  />
+			</form>
+			<button id="button_create">add</button>	
 		</div>
 		<div id="canvas">
 			<div class="heading">
@@ -21,12 +51,12 @@
 				<%= @project.name %>
 			</div>
 			<div class="graph">
-				fdfs
+				<canvas id="viewport" width="600" height="600"></canvas>
 			</div>
 		</div>
 	</div>
 </section>
 <div id="copyright-bar">
-  <span id="copyright-text"></span>
-  <img src="/images/copyright.png" />
+	<span id="copyright-text"></span>
+	<img src="/images/copyright.png" />
 </div>

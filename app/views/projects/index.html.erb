@@ -38,7 +38,7 @@
           </tr>
           <% @projects.each do |project| %>
           <tr>
-            <td><%= link_to project.name, project %></td>
+            <td><%= link_to project.name, "/node/" + project.id.to_s %></td>
             <td><%= project.created_at %></td>
             <td colspan="3">
               <%= link_to 'Edit', edit_project_path(project) %>

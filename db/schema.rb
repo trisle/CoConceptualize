@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20121027074303) do
 
+  create_table "ideas", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.string   "title"
+    t.string   "detail"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "ancestor"
+  end
+
   create_table "project_users", :force => true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -25,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121027074303) do
     t.date     "date_created"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "description"
   end
 
   create_table "projects_users", :id => false, :force => true do |t|

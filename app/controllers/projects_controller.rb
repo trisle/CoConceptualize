@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index
     @user = User.find_by_id(session[:user_id])
     @projects = @user.projects
+    
     #@user.projects = Project.all
 
     respond_to do |format|
@@ -17,10 +18,20 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    @project_ideas = Idea.where("project_id = ?", params[:id])
+    @user = User.find(session[:user_id])
 
+    @project_ideas.each do |p_idea|
+      if p_idea.ancestor == nil
+        @n_id = p_idea.id
+        @idea = p_idea
+      end
+    end
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @project }
+      format.html # index.html.erb
+      format.xml  #{ render :xml => @users }
+      #format.json  { render :file => "index.json.erb", :content_type => 'application/json' }
+      format.json #{render :json => @project_ideas}
     end
   end
 

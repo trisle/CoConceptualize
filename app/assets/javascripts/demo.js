@@ -334,8 +334,8 @@ $.fn.serializeObject = function() {
 			var rnd = Math.floor((Math.random() * 100) + 1);
 			var msg = {
 				method : 'join',
-				user_id : rnd, //$('#').val(),
-				user_name : 'Test User ' + rnd, //$('#').val(),
+				user_id : $("#new_node_uid").val(), //$('#').val(),
+				user_name : $("#new_node_uname").val(), //$('#').val(),
 				project_id : $('#new_node_pid').val()
 			}
 			socket.send(JSON.stringify(msg));

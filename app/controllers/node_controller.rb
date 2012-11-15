@@ -13,7 +13,7 @@ class NodeController < ApplicationController
   def index
     @project = Project.find(params[:id])
     @project_ideas = Idea.where("project_id = ?", params[:id])
-    @users = User.all()
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  #{ render :xml => @users }
@@ -25,7 +25,7 @@ class NodeController < ApplicationController
   def test
     @project = Project.find(params[:id])
     @project_ideas = Idea.where("project_id = ?", params[:id])
-    @users = User.all()
+    @user = User.find(session[:user_id])
 
     @project_ideas.each do |p_idea|
       if p_idea.ancestor == nil

@@ -12,10 +12,15 @@ CoConceptualize::Application.routes.draw do
   resources :users
 
   get "home/index"
-  
-  
+  #match "/projects/:id" => "node#index"
+  #match "/projects" => "projects#index"
+  #match "/projects/new" => "projects#new"
+  #match "/projects/create" => "projects#create"
+  #match "/projects/:id/edit" => "projects#edit"
+  #match "/projects/:id/update" => "projects#update"
+  match "/node/:id" => "node#test"
   match "/node/json/:id" => "node#index"
-  #match "/node/update" => "ideas#update"
+  match "/node/update" => "ideas#update"
   #resources :ideas
 
   match "/projects/:id" => "node#test"
